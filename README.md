@@ -1,9 +1,9 @@
 # Config Example
-A sample project showing how to load a configuration using [TypeSafe Config]([https://github.com/lightbend/config)
+A sample project showing how to load a configuration using [TypeSafe Config](https://github.com/lightbend/config)
 and [PureConfig](https://pureconfig.github.io/).
 
 ## TypeSafe Config
-[TypeSafe Config]([https://github.com/lightbend/config) is a well known and often used library to read configuration files for an application. The disadvantage
+[TypeSafe Config](https://github.com/lightbend/config) is a well known and often used library to read configuration files for an application. The disadvantage
 of this library is that you need to read the individual configuration parameters manually and you can get an error
 when you read a configuration parameter. If you don't read all configuration parameters at the start of your program,
 you could get an exception when reading a configuration parameter during running your program.
