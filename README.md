@@ -13,11 +13,11 @@ See the `TypeSafeConfig` program for the usage.
 ## PureConfig
 [PureConfig](https://pureconfig.github.io/) reads TypeSafe Config's configuration files, so both libraries use the same configuration file format, only
 PureConfig makes it easier to read your configuration and to detect errors in your configuration: you define case classes
-matching your configuration and use pureconfig.loadConfig[Config] where Config is your configuration case class to read
+matching your configuration and use `pureconfig.loadConfig[Config]` where `Config` is your configuration case class to read
 the configuration.
 
-Reading the configuration in this way when starting your program will get an Either of configuration failures
-or your Config case class. Reading the configuration in this way you can ensure that the configuration is as expected before starting the rest
+Reading the configuration in this way when starting your program will get an `Either` of configuration failures
+or your `Config` case class. Reading the configuration in this way you can ensure that the configuration is as expected before starting the rest
 of your program.
 
 See the `PureConfig` program for the usage.
@@ -33,7 +33,7 @@ different environment in two different ways:
 This sample project shows both ways in one project, but you can pick one or also use both methods at the same time.
 
 ### Using a different configuration file per environment
-Use a `reference.conf` file in your project and create an application.conf (or named differently) for your different environments.
+Use a `reference.conf` file in your project and create an `application.conf` (or named differently) for your different environments.
 The first line of your configuration should be `include "reference.conf"`. This loads the default values from the `reference.conf` file
 so you only need to override values when the default values aren't appropriate. The `application.conf` file in `configfiles/application.conf`
 overrides the database password as an example.
@@ -45,7 +45,7 @@ run the application, e.g.:
 
 ### Local development
 For local development you can create a file with your overrides and use the `config.file` property to use it.
-If everybody working on the project uses the same name for this file (e.g. `development.conf`), you can add it to the `.gitignore` to prevent that
+If everybody working on the project uses the same name for this file (e.g. `development.conf`), you can add it to `.gitignore` to prevent that
 it accidentally ends up in git.
 
 ## Use environment variables to override default values
