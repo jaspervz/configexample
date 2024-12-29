@@ -1,5 +1,6 @@
 target
-/.idea
+.idea
+.bsp
 *.iml
 .env
 /bin/

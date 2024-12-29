@@ -1,3 +1,6 @@
+import pureconfig.ConfigSource
+import pureconfig.generic.auto._
+
 object PureConfig {
   case class DatabaseConfig(schema: String, user: String, password: String)
 
@@ -5,7 +8,7 @@ object PureConfig {
 
 
   def main(args: Array[String]): Unit = {
-    pureconfig.loadConfig[Config] match {
+    ConfigSource.default.load[Config] match {
       case Left(configReaderFailures) =>
         sys.error(s"Encountered the following errors reading the configuration: ${configReaderFailures.toList.mkString("\n")}")
       case Right(config) =>

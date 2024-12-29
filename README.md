@@ -72,10 +72,18 @@ Omitting the question mark is generally not a good idea because this forces some
 to set environment variables. It is better to always have sensible defaults.
 
 ### Local development
-For local development you can use the sbt plugin [sbt-dotenv](https://github.com/mefellows/sbt-dotenv). This allows you
+For local development you can use the sbt plugin [sbt-dotenv](https://github.com/Philippus/sbt-dotenv). This allows you
 to create a `.env` file in which you set your environment variables. Adding this file to `.gitignore` ensures that is doesn't
 accidentally ends up in git. It is a good practise to provide a `.env.sample` file with the environment variables and the default
 settings so every developer can use this to create his or her `.env` file.
+
+You also need to create a `.jvmopts` file in your project with the following content to
+avoid errors with using [sbt-dotenv](https://github.com/Philippus/sbt-dotenv):
+
+```
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
+```
 
 ## Combining both methods
 Sometimes when you use a different configuration file per environment you also may want to use environment variables
